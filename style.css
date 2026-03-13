@@ -196,6 +196,7 @@ section h2 {
     display: flex;
     justify-content: space-around;
     gap: 2rem;
+    padding: 3rem 0; /* Add padding to steps container */
 }
 
 .step {
@@ -240,6 +241,73 @@ section h2 {
     font-size: 1.1rem;
     color: #1d1d1f;
     font-weight: 500;
+    text-align: center; /* Center align step descriptions */
+}
+
+/* Platform Support Section */
+#platform-support {
+    padding: 6rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#platform-support h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: #1d1d1f;
+}
+
+.platform-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.category-item {
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.category-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1d1d1f;
+}
+
+.category-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #6e6e73;
+    line-height: 1.8;
+}
+
+/* Expected Outcomes Section */
+#expected-outcomes {
+    padding: 6rem 0;
+    max-width: 900px; /* Make it narrower for better readability */
+    margin: 0 auto;
+    text-align: center;
+}
+
+#expected-outcomes h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1d1d1f;
+}
+
+#expected-outcomes p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #6e6e73;
 }
 
 /* Footer */
@@ -284,5 +352,9 @@ footer {
     .steps {
         flex-direction: column;
         gap: 3rem;
+    }
+
+    .platform-categories {
+        grid-template-columns: 1fr; /* Stack categories on small screens */
     }
 }
