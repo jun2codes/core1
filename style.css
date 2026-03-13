@@ -82,13 +82,37 @@ main {
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2686&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Ensure text is visible on the background */
+    border-radius: 20px;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+#hero .hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #1d1d1f;
+    color: #fff; /* Changed to white for better contrast */
     letter-spacing: -0.02em;
 }
 
@@ -96,7 +120,7 @@ main {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-    color: #6e6e73;
+    color: #f0f0f0; /* Changed to light gray for better contrast */
 }
 
 .cta-button {
@@ -181,7 +205,15 @@ section h2 {
     flex: 1;
 }
 
-.step span {
+/* Icons */
+.card i {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    width: 32px;
+    height: 32px;
+}
+
+.step-icon {
     background-color: var(--accent-color);
     color: #fff;
     width: 60px;
@@ -193,6 +225,15 @@ section h2 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
+}
+
+.step-icon span {
+    font-size: 1.8rem;
+}
+
+/* Original step span, now inside .step-icon */
+.step span {
+    display: none; /* Hide the original span as it's now inside .step-icon */
 }
 
 .step p {
