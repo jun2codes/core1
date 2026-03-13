@@ -16,6 +16,7 @@ body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6; /* Improved readability */
 }
 
 a {
@@ -27,13 +28,14 @@ a {
 /* Header */
 header {
     background-color: var(--header-background);
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem; /* Slightly reduced padding */
     position: sticky;
     top: 0;
     z-index: 10;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
 }
+
 
 nav {
     display: flex;
@@ -69,58 +71,59 @@ nav ul li a:hover {
 
 /* Main Content */
 main {
-    padding: 0 2rem;
+    padding: 0 1rem; /* Adjusted for better overall balance */
 }
 
-/* Hero Section */
-#hero {
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Icons */
+.card i {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    width: 38px; /* Slightly larger icons */
+    height: 38px;
+    stroke-width: 1.8; /* Slightly thicker stroke for icons */
+    animation: pulse 1.5s infinite ease-in-out; /* Subtle pulse animation */
+}
+
+.step-icon {
+    background-color: var(--accent-color);
+    color: #fff;
+    width: 65px; /* Slightly larger step icons */
+    height: 65px;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2686&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Placeholder image */
-    background-size: cover;
-    background-position: center;
-    color: #fff; /* Ensure text is visible on the background */
-    border-radius: 20px;
-    margin-top: 2rem;
-    position: relative;
-    overflow: hidden;
+    font-size: 2rem; /* Larger font for step numbers */
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
-#hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
-    z-index: 1;
-}
-
-#hero .hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff; /* Changed to white for better contrast */
-    letter-spacing: -0.02em;
-}
-
-.hero-content p {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    color: #f0f0f0; /* Changed to light gray for better contrast */
+.step-icon span {
+    font-size: 2rem; /* Ensure the number inside is also larger */
 }
 
 .cta-button {
@@ -131,118 +134,40 @@ main {
     border-radius: 980px;
     font-size: 1.1rem;
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
     border: 1px solid transparent;
 }
 
 .cta-button:hover {
     background-color: #0066cc;
-}
-
-
-/* Sections */
-section {
-    padding: 6rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    color: #1d1d1f;
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* Features Section */
 .feature-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     text-align: left;
 }
 
 .card {
     background-color: var(--card-background);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: 15px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply fade-in animation */
+    opacity: 0; /* Start invisible */
 }
 
-.card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #1d1d1f;
-}
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
 
-.card p {
-    color: #6e6e73;
-    line-height: 1.6;
-}
-
-
-/* How It Works Section */
-#how-it-works {
-    background-color: var(--card-background);
-    border-radius: 20px;
-    margin-top: 4rem;
-    border: 1px solid var(--border-color);
-}
-
-.steps {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    padding: 3rem 0; /* Add padding to steps container */
-}
-
-.step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-
-/* Icons */
-.card i {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    width: 32px;
-    height: 32px;
-}
-
-.step-icon {
-    background-color: var(--accent-color);
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.step-icon span {
-    font-size: 1.8rem;
-}
-
-/* Original step span, now inside .step-icon */
-.step span {
-    display: none; /* Hide the original span as it's now inside .step-icon */
-}
-
-.step p {
-    font-size: 1.1rem;
-    color: #1d1d1f;
-    font-weight: 500;
-    text-align: center; /* Center align step descriptions */
-}
 
 /* Platform Support Section */
 #platform-support {
@@ -269,9 +194,15 @@ section h2 {
 .category-item {
     background-color: var(--card-background);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: 15px; /* Slightly more rounded */
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Subtle shadow */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .category-item h3 {
