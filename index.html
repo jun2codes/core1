@@ -1,14 +1,75 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoliCore - 자동화된 취약점 분석 솔루션</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <nav>
+            <div class="logo">PoliCore</div>
+            <ul>
+                <li><a href="#hero">소개</a></li>
+                <li><a href="#features">주요 기능</a></li>
+                <li><a href="#how-it-works">작동 방식</a></li>
+                <li><a href="#contact">문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>PoliCore</h1>
+                <p>충청사이버보안아카데미(CCSA)에서 개발한 최첨단 자동화 취약점 분석 솔루션입니다.</p>
+                <a href="#features" class="cta-button">더 알아보기</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>주요 기능</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <h3>자동화된 분석</h3>
+                    <p>웹 애플리케이션의 취약점을 자동으로 스캔하고 분석합니다.</p>
+                </div>
+                <div class="card">
+                    <h3>상세 보고서</h3>
+                    <p>발견된 취약점에 대한 심층적인 보고서를 제공하고 해결 방법을 제안합니다.</p>
+                </div>
+                <div class="card">
+                    <h3>손쉬운 통합</h3>
+                    <p>기존 개발 워크플로우에 원활하게 통합됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <h2>작동 방식</h2>
+            <div class="steps">
+                <div class="step">
+                    <span>1</span>
+                    <p>분석 대상 등록</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <p>자동 분석 실행</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <p>보고서 확인 및 조치</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>충청사이버보안아카데미 (CCSA)</p>
+        <p>문의: contact@ccsa.or.kr</p>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
