@@ -1,24 +1,38 @@
-/* General Styles */
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --accent-color: #007aff;
+    --header-background: rgba(249, 249, 249, 0.8);
+    --card-background: #ffffff;
+    --footer-background: #f2f2f2;
+    --border-color: #e0e0e0;
+}
+
 body {
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
     text-decoration: none;
-    color: #00aaff;
+    color: var(--accent-color);
+    font-weight: 500;
 }
 
 /* Header */
 header {
-    background-color: #222;
-    padding: 1rem;
+    background-color: var(--header-background);
+    padding: 1.5rem 2rem;
     position: sticky;
     top: 0;
     z-index: 10;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav {
@@ -31,97 +45,133 @@ nav {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
+    color: #1d1d1f;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content */
+main {
+    padding: 0 2rem;
 }
 
 /* Hero Section */
 #hero {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 80vh;
     text-align: center;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
+    color: #1d1d1f;
+    letter-spacing: -0.02em;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #6e6e73;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #00aaff;
+    background-color: var(--accent-color);
     color: #fff;
     padding: 1rem 2rem;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 980px;
+    font-size: 1.1rem;
+    font-weight: 500;
     transition: background-color 0.3s;
+    border: 1px solid transparent;
 }
 
 .cta-button:hover {
-    background-color: #0088cc;
+    background-color: #0066cc;
 }
 
-/* Features Section */
-#features {
-    padding: 4rem 1rem;
+
+/* Sections */
+section {
+    padding: 6rem 0;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
 
-#features h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+section h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: #1d1d1f;
 }
 
+/* Features Section */
 .feature-cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    justify-content: center;
+    text-align: left;
 }
 
 .card {
-    background-color: #333;
-    padding: 2rem;
-    border-radius: 10px;
-    flex: 1;
-    max-width: 350px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .card h3 {
     font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 1rem;
+    color: #1d1d1f;
 }
+
+.card p {
+    color: #6e6e73;
+    line-height: 1.6;
+}
+
 
 /* How It Works Section */
 #how-it-works {
-    padding: 4rem 1rem;
-    background-color: #222;
-    text-align: center;
-}
-
-#how-it-works h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    background-color: var(--card-background);
+    border-radius: 20px;
+    margin-top: 4rem;
+    border: 1px solid var(--border-color);
 }
 
 .steps {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: space-around;
+    gap: 2rem;
 }
 
 .step {
@@ -132,39 +182,66 @@ nav ul {
 }
 
 .step span {
-    background-color: #00aaff;
+    background-color: var(--accent-color);
     color: #fff;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.step p {
+    font-size: 1.1rem;
+    color: #1d1d1f;
+    font-weight: 500;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 2rem 1rem;
-    background-color: #333;
+    padding: 4rem 2rem;
+    background-color: var(--footer-background);
+    color: #6e6e73;
+    margin-top: 6rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .feature-cards {
-        flex-direction: column;
-        align-items: center;
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        display: none; /* For simplicity. A hamburger menu would be better for a real app. */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    section h2 {
+        font-size: 2.2rem;
     }
 
     .steps {
         flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        display: none; /* Simple responsive fix, can be improved with a hamburger menu */
+        gap: 3rem;
     }
 }
