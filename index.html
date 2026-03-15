@@ -5,175 +5,372 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PoliCore - AI 기반 자동화 취약점 진단 솔루션</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">PoliCore</div>
-            <ul>
-                <li><a href="#hero">소개</a></li>
-                <li><a href="#problem-solution">왜 PoliCore인가?</a></li>
-                <li><a href="#features">주요 기능</a></li>
-                <li><a href="#how-it-works">작동 방식</a></li>
-                <li><a href="#platform-support">지원 환경</a></li>
-                <li><a href="#expected-outcomes">기대 효과</a></li>
-                <li><a href="#contact">문의</a></li>
-            </ul>
-        </nav>
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">P</div>
+                PoliCore
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">소개</a></li>
+                    <li><a href="#features">특장점</a></li>
+                    <li><a href="#solution">주요 기능</a></li>
+                    <li><a href="#process">작동 방식</a></li>
+                    <li><a href="#platform">지원 환경</a></li>
+                    <li><a href="#benefits">기대 효과</a></li>
+                    <li><a href="#contact">문의</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-menu">
+            <button class="mobile-close" onclick="toggleMobileMenu()">&times;</button>
+            <ul>
+                <li><a href="#hero" onclick="toggleMobileMenu()">소개</a></li>
+                <li><a href="#features" onclick="toggleMobileMenu()">특장점</a></li>
+                <li><a href="#solution" onclick="toggleMobileMenu()">주요 기능</a></li>
+                <li><a href="#process" onclick="toggleMobileMenu()">작동 방식</a></li>
+                <li><a href="#platform" onclick="toggleMobileMenu()">지원 환경</a></li>
+                <li><a href="#benefits" onclick="toggleMobileMenu()">기대 효과</a></li>
+                <li><a href="#contact" onclick="toggleMobileMenu()">문의</a></li>
+            </ul>
+        </div>
+    </div>
+
     <main>
-        <section id="hero">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
             <div class="hero-content">
-                <h1>AI 기반 자동화 취약점 진단, PoliCore</h1>
-                <p>복잡한 IT 인프라, 더 이상 수동적인 보안에 의존하지 마세요. PoliCore가 공공기관의 디지털 자산을 안전하게 보호합니다.</p>
-                <a href="#problem-solution" class="cta-button">PoliCore 알아보기</a>
-            </div>
-        </section>
-
-        <section id="problem-solution">
-            <h2>왜 지금 PoliCore가 필요한가?</h2>
-            <p class="section-description">급변하는 디지털 환경 속에서 IT 인프라의 취약점은 끊임없이 발생합니다. 기존 수동 진단 방식으로는 방대한 자산을 모두 관리하고 최신 위협에 대응하기 어렵습니다. PoliCore는 이러한 한계를 넘어, 체계적이고 자동화된 방식으로 공공기관의 보안을 강화합니다.</p>
-            <div class="solution-points">
-                <div class="point-item">
-                    <i data-feather="alert-triangle"></i>
-                    <h3>복잡한 IT 환경</h3>
-                    <p>다양한 시스템과 서비스의 증가로 취약점 관리의 복잡성이 심화됩니다.</p>
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    AI-Powered Security Solution
                 </div>
-                <div class="point-item">
-                    <i data-feather="clock"></i>
-                    <h3>수동 진단의 한계</h3>
-                    <p>시간과 인력 소모가 크고, 최신 위협에 대한 즉각적인 대응이 어렵습니다.</p>
-                </div>
-                <div class="point-item">
-                    <i data-feather="cpu"></i>
-                    <h3>PoliCore, 그 해답</h3>
-                    <p>AI 기반 자동화된 진단으로 효율성, 정확성, 일관성을 모두 확보합니다.</p>
+                <h1>AI 기반 자동화 취약점 진단, <span>PoliCore</span></h1>
+                <p>복잡한 IT 인프라, 더 이상 수동적인 보안에 의존하지 마세요. PoliCore는 공공기관의 디지털 자산을 AI 기술로 안전하게 보호합니다.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary">PoliCore 알아보기</a>
+                    <a href="#contact" class="btn btn-secondary">문의하기</a>
                 </div>
             </div>
         </section>
 
-        <section id="features">
-            <h2>PoliCore의 핵심 기능</h2>
-            <div class="feature-cards">
-                <div class="card">
-                    <i data-feather="cpu"></i>
-                    <h3>독보적인 ATC 자동화 엔진</h3>
-                    <p>자산 등록부터 분석까지 전 과정을 자동화하여 보안 관리의 효율성을 극대화합니다.</p>
+        <!-- Features Section -->
+        <section class="section section-alt" id="features">
+            <div class="section-header">
+                <h2 class="section-title">PoliCore의 특장점</h2>
+                <p class="section-subtitle">최첨단 AI 기술과 방대한 보안 데이터를 기반으로 공공기관의 IT 자산을 효과적으로 보호합니다.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+                    </div>
+                    <h3>AI 기반 스마트 진단 엔진</h3>
+                    <p>자체 개발한 ATC(Automated Threat Correlation) 엔진이 자산 등록부터 분석, 보고서 생성까지 전 과정을 자동화합니다.</p>
                 </div>
-                <div class="card">
-                    <i data-feather="settings"></i>
-                    <h3>유연한 관리 기능</h3>
-                    <p>Agent 및 Non-Agent 방식의 혼합 스케줄 진단을 지원하여 다양한 환경에 최적화된 관리를 제공합니다.</p>
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>완벽한 보안 컴플라이언스 대응</h3>
+                    <p>ISMS-P, K-RMF, CSAP 등 국내외 주요 보안 기준의 취약점 진단 요소를 템플릿으로 제공합니다.</p>
                 </div>
-                <div class="card">
-                    <i data-feather="shield"></i>
-                    <h3>원스톱 보안 관리</h3>
-                    <p>자동, 수동, 스케줄 진단 통합 관리 및 상세 로그 데이터 관리를 통해 통합적인 보안 체계를 구축합니다.</p>
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>유연한 하이브리드 진단</h3>
+                    <p>Agent, Agentless, 수동 진단 방식을 모두 지원하여 시스템에 최적화된 방법을 선택할 수 있습니다.</p>
                 </div>
-                <div class="card">
-                    <i data-feather="file-text"></i>
-                    <h3>맞춤형 보고서</h3>
-                    <p>자산별, 그룹별 커스터마이징 가능한 보고서를 실시간으로 업데이트하여 필요한 정보를 정확하게 제공합니다.</p>
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>실시간 취약점 분석</h3>
+                    <p>실시간 취약점 분석·평가를 통해 위험평가의 객관적 지표를 제공합니다.</p>
                 </div>
-                <div class="card">
-                    <i data-feather="check-square"></i>
-                    <h3>규제 준수 자동화</h3>
-                    <p>K-RMF(국방표준준수평가) 프로세스를 완전 자동화하여 공공기관의 규제 준수 부담을 경감합니다.</p>
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>편의성 극대화 Web UI</h3>
+                    <p>직관적인 통합 대시보드로 취약점 현황을 한눈에 확인하고 실시간 보고서를 생성합니다.</p>
+                </div>
+                <div class="feature-card scroll-animate">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>K-RMF 규제 준수 자동화</h3>
+                    <p>국방표준준수평가(K-RMF) 프로세스를 완전 자동화하여 공공기관의 규제 준수 부담을 경감합니다.</p>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works">
-            <h2>PoliCore의 작동 방식</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon"><span>1</span></div>
-                    <p>자산 등록: 진단 대상 자산 등록 및 분류</p>
+        <!-- Solution Section -->
+        <section class="section solution-section" id="solution">
+            <div class="solution-header">
+                <h2>PoliCore 취약점 진단 자동화 솔루션</h2>
+                <p>충청사이버보안아카데미(CCSA)의 다년간의 보안 컨설팅 노하우와 AI 기술력이 집약된 취약점 진단 자동화 솔루션입니다.</p>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-item scroll-animate">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <div>
+                        <h3>자산 그룹/권한 관리</h3>
+                        <p>자산별, 운영 부서별 그룹핑과 관리자/사용자별 접근 권한을 세분화하여 관리합니다.</p>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-icon"><span>2</span></div>
-                    <p>진단 실행: 자동, 수동, 스케줄 기반 진단 실행</p>
+                <div class="solution-item scroll-animate">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </div>
+                    <div>
+                        <h3>진단 템플릿 관리</h3>
+                        <p>취약점 진단 기준 항목을 커스터마이징하여 내부 보안 지침에 맞게 설정합니다.</p>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-icon"><span>3</span></div>
-                    <p>데이터 수집: 취약점 정보 자동 수집</p>
+                <div class="solution-item scroll-animate">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                    </div>
+                    <div>
+                        <h3>다양한 진단 수행</h3>
+                        <p>자산별, 그룹별, IP 대역별 다양한 진단 대상을 선정하고 수행 중 취소도 가능합니다.</p>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-icon"><span>4</span></div>
-                    <p>분석 처리: 심각도 분석 및 보고서 생성</p>
+                <div class="solution-item scroll-animate">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div>
+                        <h3>상세 결과 가이드</h3>
+                        <p>Web UI에서 보고서를 확인하고 Excel, Word 형태의 상세 결과 보고서를 제공합니다.</p>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-icon"><span>5</span></div>
-                    <p>이행 점검: 조치 이력 추적 및 이행 점검</p>
+                <div class="solution-item scroll-animate">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div>
+                        <h3>신속한 조치 관리</h3>
+                        <p>사전조치, 결과조치 기능을 제공하며 조치 담당자와 기한을 지정할 수 있습니다.</p>
+                    </div>
+                </div>
+                <div class="solution-item scroll-animate">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M9 15l2 2 4-4"/></svg>
+                    </div>
+                    <div>
+                        <h3>효율적인 결재 관리</h3>
+                        <p>결재선을 지정하고 결재 요청 리스트에 대한 효율적인 이력관리를 지원합니다.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="platform-support">
-            <h2>광범위한 지원 환경</h2>
-            <div class="platform-categories">
-                <div class="category-item">
-                    <i data-feather="server"></i>
-                    <h3>운영체제</h3>
+        <!-- Process Section -->
+        <section class="process-section" id="process">
+            <div class="section-header">
+                <h2 class="section-title">PoliCore의 작동 방식</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step scroll-animate">
+                    <div class="process-number">1</div>
+                    <p>자산 등록</p>
+                </div>
+                <div class="process-step scroll-animate">
+                    <div class="process-number">2</div>
+                    <p>진단 실행</p>
+                </div>
+                <div class="process-step scroll-animate">
+                    <div class="process-number">3</div>
+                    <p>데이터 수집</p>
+                </div>
+                <div class="process-step scroll-animate">
+                    <div class="process-number">4</div>
+                    <p>분석 처리</p>
+                </div>
+                <div class="process-step scroll-animate">
+                    <div class="process-number">5</div>
+                    <p>이행 점검</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Section -->
+        <section class="section section-alt" id="platform">
+            <div class="section-header">
+                <h2 class="section-title">광범위한 지원 환경</h2>
+                <p class="section-subtitle">다양한 IT 인프라 환경에서 원활하게 동작하며, 클라우드 및 온프레미스 환경 모두를 지원합니다.</p>
+            </div>
+            <div class="platform-grid">
+                <div class="platform-card scroll-animate">
+                    <div class="platform-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+                        <h3>운영체제</h3>
+                    </div>
                     <ul>
                         <li>Windows Server</li>
-                        <li>Linux 계열(Red Hat, Ubuntu, CentOS)</li>
-                        <li>Unix 계열(AIX, HP-UX, Solaris)</li>
+                        <li>Linux (Red Hat, Ubuntu, CentOS)</li>
+                        <li>Unix (AIX, HP-UX, Solaris)</li>
                     </ul>
                 </div>
-                <div class="category-item">
-                    <i data-feather="cloud"></i>
-                    <h3>클라우드 환경</h3>
+                <div class="platform-card scroll-animate">
+                    <div class="platform-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                        <h3>클라우드 환경</h3>
+                    </div>
                     <ul>
+                        <li>Amazon Web Services</li>
                         <li>Microsoft Azure</li>
                         <li>Google Cloud Platform</li>
                     </ul>
                 </div>
-                <div class="category-item">
-                    <i data-feather="hard-drive"></i>
-                    <h3>네트워크 장비</h3>
+                <div class="platform-card scroll-animate">
+                    <div class="platform-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <h3>네트워크 장비</h3>
+                    </div>
                     <ul>
-                        <li>라우터/스위치(Cisco, Juniper, HP)</li>
-                        <li>방화벽(Palo Alto, Fortinet, Check Point 등)</li>
-                        <li>보안장비(IPS, UTM 등)</li>
+                        <li>라우터/스위치 (Cisco, Juniper)</li>
+                        <li>방화벽 (Palo Alto, Fortinet)</li>
+                        <li>보안장비 (IPS, UTM)</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="expected-outcomes">
-            <h2>PoliCore와 함께하는 보안 혁신</h2>
-            <p>PoliCore는 자동화를 통해 운영 효율성을 극대화하고, 체계적이고 신뢰할 수 있는 보안 관리 체계를 구축하며, 규제 준수 및 컴플라이언스를 강화하고, 유연한 확장성을 제공합니다. 이를 통해 공공기관의 디지털 전환을 지원하고 안전한 디지털 공공 서비스를 실현하는 핵심 동반자 역할을 수행합니다.</p>
+        <!-- Benefits Section -->
+        <section class="section benefits-section" id="benefits">
+            <div class="section-header">
+                <h2 class="section-title">PoliCore와 함께하는 보안 혁신</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card scroll-animate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+                    <h3>운영 효율성 극대화</h3>
+                    <p>AI 기반 자동화로 취약점 진단 시간을 단축하고 인력 투입을 최소화합니다.</p>
+                </div>
+                <div class="benefit-card scroll-animate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <h3>체계적인 보안 관리</h3>
+                    <p>실시간 분석과 객관적 지표로 취약점 관리业务流程을 체계화합니다.</p>
+                </div>
+                <div class="benefit-card scroll-animate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    <h3>완벽한 컴플라이언스</h3>
+                    <p>ISMS-P, K-RMF, CSAP 등 주요 보안 인증 기준에完全 대응합니다.</p>
+                </div>
+                <div class="benefit-card scroll-animate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    <h3>유연한 확장성</h3>
+                    <p>다양한 환경을 지원하여 시스템 확장 시에도 안정적인 진단이 가능합니다.</p>
+                </div>
+            </div>
+            <p class="benefit-summary">PoliCore는 공공기관의 디지털 전환을 지원하고 안전한 디지털 공공 서비스를 실현하는 핵심 동반자 역할을 수행합니다.</p>
         </section>
     </main>
 
     <footer id="contact">
-        <div class="footer-content">
-            <div class="contact-info">
-                <h3>문의하기</h3>
-                <p>충청사이버보안아카데미 (CCSA)</p>
-                <p>이메일: contact@ccsa.or.kr</p>
+        <div class="footer-inner">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">P</div>
+                        PoliCore
+                    </div>
+                    <p>충청사이버보안아카데미(CCSA)의<br>AI 기반 자동화 취약점 진단 솔루션</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="footer-nav-group">
+                        <h4>바로가기</h4>
+                        <ul>
+                            <li><a href="#features">특장점</a></li>
+                            <li><a href="#solution">주요 기능</a></li>
+                            <li><a href="#process">작동 방식</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-group">
+                        <h4>지원</h4>
+                        <ul>
+                            <li><a href="#platform">지원 환경</a></li>
+                            <li><a href="#benefits">기대 효과</a></li>
+                            <li><a href="#contact">문의하기</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="footer-nav">
-                <h3>빠른 링크</h3>
-                <ul>
-                    <li><a href="#hero">소개</a></li>
-                    <li><a href="#problem-solution">왜 PoliCore인가?</a></li>
-                    <li><a href="#features">주요 기능</a></li>
-                    <li><a href="#how-it-works">작동 방식</a></li>
-                    <li><a href="#platform-support">지원 환경</a></li>
-                    <li><a href="#expected-outcomes">기대 효과</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PoliCore. All rights reserved.</p>
             </div>
         </div>
-        <p class="copyright">&copy; 2026 PoliCore. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
-        feather.replace();
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
-    <script src="main.js"></script>
 </body>
 </html>
